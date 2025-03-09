@@ -93,6 +93,8 @@ app.post('/login', async (req, res) => {
                     return res.redirect('/home');
                 }
             };
+        }else{
+            return res.send('user does not exist. try again');
         }
     } catch (error) {
         console.log(error);
