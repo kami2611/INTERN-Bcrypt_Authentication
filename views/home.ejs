@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header div {
+            display: flex;
+            gap: 10px;
+        }
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <% if (typeof message !== 'undefined') { %>
@@ -14,9 +34,15 @@
         <h3>navera solutions</h3>
         </div>
         <div>
-            <a href="/login"><button>Login</button></a>
-            <a href="/register"><button>register</button></a>
-            <a href="/topSecret">top secret</a>
+            <% if (loggedIn) { %>
+                <a href="/topSecret">top secret</a>
+                <a href="/logout">log out</a>
+            <% } else { %>
+                <a href="/login"><button>Login</button></a>
+                <a href="/register"><button>register</button></a>
+            <% } %>
+            
+             
         </div>
     </div>
     <div class="body">
